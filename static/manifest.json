@@ -1,6 +1,6 @@
 {
-  "name": "urbox",
-  "short_name": "urbox",
+  "name": "Quick Frontend",
+  "short_name": "quickfrontend",
   "icons": [
       {
           "src": "/static/img/icons/android-chrome-192x192.png",
