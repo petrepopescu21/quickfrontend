@@ -1,6 +1,7 @@
 # Quick Frontend
 
-> Frontend sample for Petre's team with two routes
+> Frontend single-page style sample for Petre's team
+> built with Vue.js
 
 ## Build Setup
 
@@ -18,4 +19,8 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## To-do
+
+* Change static data to dynamic data as served by APIs
+* Change style
+* Create live chat component
