@@ -24,3 +24,7 @@ npm run build --report
 * Change static data to dynamic data as served by APIs
 * Change style
 * Create live chat component
+
+## sample
+
+Working version at [http://quickfrontend.azurewebsites.net](http://quickfrontend.azurewebsites.net)
