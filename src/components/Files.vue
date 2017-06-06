@@ -2,37 +2,35 @@
     <div>
         <h1>Files TODO</h1>
         <div v-for="file in files">
-            <h3>{{file.title}}</h3>
-            <a v-bind:href="file.url" v-bind:alt="file.filename">Download</a>
-            <span>{{file.date}}</span>
+            <h3>{{file.name}}</h3>
+            <a v-bind:href="file.location" v-bind:alt="file.location">Download</a>
         </div>
     </div>
 </template>
 
 <script>
+    import Axios from 'axios'
     export default {
         name: "files",
+        created () {
+            var _this = this
+            Axios.get('https://microsoft111.azurewebsites.net/api/blob').then(
+                function(result) {
+                    _this.files = result.data
+                }
+            )
+        },
         data () {
         return {
             "files": [{
-                "filename": "something.jpg",
-                "url": "https://microsoft.com",
-                "title": "Some random file",
-                "date": "2017-03-03"
-            },
-            {
-                "filename": "somethingelse.jpg",
-                "url": "https://google.com",
-                "title": "Some other file",
-                "date": "2017-03-03"
-            },
-            {
-                "filename": "something.jpg",
-                "url": "https://github.com/petrepopescu21/quickfrontend",
-                "title": "Link to a repo",
-                "date": "2017-03-03"
+                "location": "https://microsoft.com",
+                "name": "Some random file"
             }]
         }
     }
     }
 </script>
+
+<style scoped>
+
+</style>

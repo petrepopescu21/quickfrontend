@@ -3,7 +3,7 @@
     <h1>News</h1>
     <div v-for="article in news">
         <h3>{{article.title}}</h3>
-        <span>{{article.date}}</span>
+        <span>{{article.data}}</span>
         <p>{{article.body}}</p>
       </div>
 
@@ -11,24 +11,24 @@
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
   name: 'news',
+  created () {
+    var _this = this
+      Axios.get('https://microsoft111.azurewebsites.net/api/table').then(
+        function(result){
+          console.log(result.data)
+          _this.news = result.data
+        }
+      )
+  },
   data () {
     return {
       news: [{
-        "title": "First piece of news",
-        "date": "2017-05-03",
+        "title": "News is still loading",
+        "data": "2017-05-03",
         "body": "Bla bla bla"
-      },
-      {
-        "title": "Second piece of news",
-        "date": "2017-05-02",
-        "body": "Bla bla bla blah!"
-      },
-      {
-        "title": "Old piece of news",
-        "date": "2016-05-03",
-        "body": "Bla bla bla blargh!"
       }]
     }
   }
